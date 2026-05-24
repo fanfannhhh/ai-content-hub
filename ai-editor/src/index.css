@@ -1,0 +1,8 @@
+/* Minimal reset — editor colors are defined in App.jsx */
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}

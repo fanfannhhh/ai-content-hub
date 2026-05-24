@@ -1,0 +1,10 @@
+node_modules/
+.env
+__pycache__/
+.venv/
+.DS_Store
+*.log
+dist/
+
+# 本地 SQLite 与运行时数据（勿提交）
+data/
