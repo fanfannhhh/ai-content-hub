@@ -8,7 +8,8 @@ export function sortDocsByCreatedAt(list) {
   )
 }
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+import { API_BASE, API_CONNECT_ERROR, API_TIMEOUT_ERROR } from './apiBase.js'
+
 const FETCH_TIMEOUT_MS = 15000
 
 /**
@@ -26,9 +27,9 @@ async function apiFetch(path, init = {}) {
     return response
   } catch (err) {
     if (err instanceof Error && err.name === 'AbortError') {
-      throw new Error('请求超时，请确认后端已启动（uvicorn main:app --port 8000）')
+      throw new Error(API_TIMEOUT_ERROR)
     }
-    throw new Error('无法连接后端，请确认 uvicorn 已在 8000 端口运行')
+    throw new Error(API_CONNECT_ERROR)
   } finally {
     clearTimeout(timer)
   }

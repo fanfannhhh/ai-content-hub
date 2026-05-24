@@ -1,7 +1,6 @@
 import { markdownToHtml } from '../utils/markdownToHtml.js'
 
-/** Backend base URL; empty string uses same-origin or Vite dev proxy. */
-const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+import { API_BASE } from './apiBase.js'
 
 /**
  * 导出前：若正文仍是「段落里的 Markdown」（# 标题、**粗体**），先转成语义化 HTML。

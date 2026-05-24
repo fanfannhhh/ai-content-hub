@@ -2444,7 +2444,7 @@ export default function App() {
             <div className="load-error-panel">
               <p>无法连接文档服务：{loadError}</p>
               <p className="load-error-hint">
-                请确认已在项目根目录启动后端：uvicorn main:app --reload --port 8000
+                请检查网络连接，或稍后重试。本地开发可在 ai-editor/.env 中设置 VITE_API_BASE_URL
               </p>
               <button type="button" className="load-error-retry" onClick={retryBootstrap}>
                 重试

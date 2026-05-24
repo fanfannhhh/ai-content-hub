@@ -1,4 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+import { API_BASE, API_CONNECT_ERROR } from './apiBase.js'
+
 const UPLOAD_TIMEOUT_MS = 120_000
 
 /**
@@ -38,12 +39,12 @@ export async function uploadImportDocument(file) {
       throw new Error('导入超时，文件可能过大，请稍后重试')
     }
     if (err instanceof TypeError && String(err.message).includes('fetch')) {
-      throw new Error('无法连接后端，请确认已启动：uvicorn main:app --reload --port 8000')
+      throw new Error(API_CONNECT_ERROR)
     }
     if (err instanceof Error) {
       throw err
     }
-    throw new Error('导入失败，请确认后端已启动')
+    throw new Error('导入失败，请稍后重试')
   } finally {
     clearTimeout(timer)
   }

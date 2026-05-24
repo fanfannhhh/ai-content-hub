@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+import { API_BASE } from './apiBase.js'
 
 /**
  * 智能配图：中文 + scope → 后端生图 → 图片 URL。

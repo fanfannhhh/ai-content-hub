@@ -1,5 +1,4 @@
-/** Backend base URL; empty string uses same-origin or Vite dev proxy. */
-const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+import { API_BASE } from './apiBase.js'
 
 /**
  * Parse one SSE event block.
