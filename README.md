@@ -6,9 +6,8 @@
 🟢 **线上预览 (Live Demo):** [https://ai-content-hub-pi.vercel.app](https://ai-content-hub-pi.vercel.app)  
 *(由于后端部署于 Render 免费实例，首次冷启动可能需要 30-50 秒，请耐心等待)*
 
-### 🎥 项目演示
-![Demo GIF](GIF/动画.gif)
-
+### 🎥 项目演示 (点击跳转)
+[![Demo GIF](GIF/动画.gif)](https://github.com/fanfannhhh/ai-content-hub/blob/main/GIF/动画.gif)
 ---
 
 ## ✨ 核心亮点 (Core Features)
@@ -84,33 +83,32 @@ npm run dev
 
 ## 📦 云端部署说明 (Deployment)
 
-* **后端 (Render):**
-* **Build Command:** `pip install -r requirements.txt`
-* **Start Command:** `uvicorn main:app --host 0.0.0.0 --port 10000`
-* *环境要求:* 需在 Render 仪表盘的 Environment 选项卡中注入 `DEEPSEEK_API_KEY`。
-
-
-* **前端 (Vercel):**
-* **Root Directory:** `ai-editor`
-* **Install Command:** `npm install --legacy-peer-deps` *(解决 Tiptap 核心包严格依赖冲突)*
-* *环境要求:* 需在 Vercel 环境变量中配置 `VITE_API_BASE_URL`，指向 Render 分配的线上域名。
-
-
+- **后端 (Render):**
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `uvicorn main:app --host 0.0.0.0 --port 10000`
+- *环境要求:* 需在 Render 仪表盘的 Environment 选项卡中注入 `DEEPSEEK_API_KEY`。
+- **前端 (Vercel):**
+- **Root Directory:** `ai-editor`
+- **Install Command:** `npm install --legacy-peer-deps` *(解决 Tiptap 核心包严格依赖冲突)*
+- *环境要求:* 需在 Vercel 环境变量中配置 `VITE_API_BASE_URL`，指向 Render 分配的线上域名。
 
 ---
 
 ## 🔌 核心 API 路由 (API Routes)
 
-| 请求方法 | 路由路径 | 功能说明 |
-| --- | --- | --- |
-| `POST` | `/api/ai/complete` | **[Multi-Agent 驱动]** 接收上下文片段，返回 AI 润色、续写或改写后的文本内容。 |
-| `POST` | `/api/ppt/outline` | 接收汇报主题 `topic`，生成层级分明的结构化大纲 (Markdown)。 |
-| `POST` | `/api/ppt/download` | 根据确认的大纲流，生成并返回 `.pptx` 文件的二进制数据流。 |
+
+| 请求方法   | 路由路径                | 功能说明                                               |
+| ------ | ------------------- | -------------------------------------------------- |
+| `POST` | `/api/ai/complete`  | **[Multi-Agent 驱动]** 接收上下文片段，返回 AI 润色、续写或改写后的文本内容。 |
+| `POST` | `/api/ppt/outline`  | 接收汇报主题 `topic`，生成层级分明的结构化大纲 (Markdown)。            |
+| `POST` | `/api/ppt/download` | 根据确认的大纲流，生成并返回 `.pptx` 文件的二进制数据流。                  |
+
 
 ## 📄 许可证 (License)
 
 本项目为全栈开发与 AI 应用集成实践示例，欢迎自由 Fork、修改与交流学习。
 
 ```
+
 ```
 
